@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulários</title>
+        <link rel="stylesheet" href="css/style_form.css">
+    </head>
+    <body>
+        <h2>Formulários HTML</h2>
+        <!-- Primeiro Fomulario -->
+        <!-- Primeiro atributo (action serve para definir o local 
+        para enviar os dados do formulário e method serve para 
+        especificar se será recebido ou enviado , get e set) -->
+        <form action="register.php" method="get">
+            <div>
+                <label for="">Nome:</label>
+                <input type="text" name="" id="">
+            </div>
+            <!-- Atributo name (boa partica colocar um name no input, para que possa ser linkado ao label) -->
+            <div>
+            <!-- Atributo label (boa prática colocar o mesmo conteudo de name de input no for do label para criar um link) -->
+                <label for="age">Idade:</label>
+                <input type="text" name="age" id="">
+            </div>
+            <!-- Select (cria uma lista de opções para selecionar dentro do formulario)-->
+            <div>
+                <label for="job">Selecione a sua profissão:</label>
+                <select name="job" id="">
+                    <option value="programador">Programador</option>
+                    <option value="tester">Tester/QA</option>
+                    <option value="devops">DevOps</option>
+                </select>
+            </div>
+            <!-- Atributo selected (deixa uma opção da lista destacado no formulario, o que tem selected)-->
+            <div>
+                <label for="contrato">Você leu os termos do contrato?</label>
+                <select name="contrato" id="">
+                    <option value="sim">Sim</option>
+                    <option value="nao" selected>Não</option>
+                </select>
+            </div>
+            <!-- Multiplas seleções (muda a apresentação das opções, mostrando
+            varias dela no campo junto com barra de rolagem, e permite a 
+            seleção de um ou varios itens) -->
+            <div>
+                <label for="itens">Selecione os itens desejados:</label>
+                <select name="itens" multiple>
+                    <option value="pera">Pera</option>
+                    <option value="feijao">Feijão</option>
+                    <option value="arroz">Arroz</option>
+                    <option value="milho">Milho</option>
+                    <option value="acucar">Açúcar</option>
+                </select>
+            </div>
+            <!-- Atributo textarea (cria uma area de texto que permite uma quentidade maior de caracteres)-->
+            <div>
+                <label for="coment">Escreva abaixo o que você achou do post:</label>
+                <textarea name="coment"></textarea>
+            </div>
+            <!-- Fieldset e legend (para agrupar inputs e descrever inputs agrupados) -->
+            <div>
+                <fieldset>
+                    <legend>Preencha a suas informações:</legend>
+                    <label for="firstname">Nome:</label>
+                    <input type="text" name="firstname">
+                    <label for="lastname">Sobrenome:</label>
+                    <input type="text" name="lastname">
+                </fieldset>
+            </div>
+            <!-- Datalist (cria uma lista de opções com campo vazio inicial, com a possibilidade de escrita dentro do campo e o sistema autocompleta com as opções disponiveis)-->
+            <div>
+                <label for="flavor">Escolha o sabor:</label>
+                <input type="text" list="flavors" name="flavor">
+                <datalist id="flavors">
+                    <option value="Morango"></option>
+                    <option value="Chocolate"></option>
+                    <option value="Cereja"></option>
+                    <option value="Abacaxi"></option>
+                    <option value="Manga"></option>
+                </datalist>
+            </div>
+            <!-- Criando o campo senha -->
+            <div>
+                <label for="senha">Digite sua senha:</label>
+                <input type="password" name="senha">
+            </div>
+            <!-- Botão radio (funciona como selecionar, mas com a diferença que 
+            você tem todas as opções a mostra e que é obrigatório selecionar 
+            uma não podendo desselecionar) -->
+            <div>
+                <label for="car_model">Escolha o modelo do seu carro:</label>
+                <div class="radio">
+                    <input type="radio" value="bmw" name="car_model">
+                    <label for="bmw">BMW</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" value="audi" name="car_model">
+                    <label for="audi">Audi</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" value="mercedes" name="car_model">
+                    <label for="mercedes">Mercedes</label>
+                </div>
+            </div>
+            <!-- Usando o checkbox (cria as mesmas opções do radio, mas com 
+            possibilidade de selecionar e desselecionar e selecionar varios 
+            ao mesmo tempo) -->
+            <div>
+                <label for="opcao">Opcionais do carro:</label>
+                <div class="radio">
+                    <input type="checkbox" name="opcao[]" value="big-tires">
+                    <label for="big-tires">Pneus Grandes</label>
+                </div>
+                <div class="radio">
+                    <input type="checkbox" name="opcao[]" value="fume">
+                    <label for="fume">Vidros com Fumê</label>
+                </div>
+                <div class="radio">
+                    <input type="checkbox" name="opcao[]" value="metalic">
+                    <label for="metalic">Pintura Metalica</label>
+                </div>
+                <div class="radio">
+                    <input type="checkbox" name="opcao[]" value="solar">
+                    <label for="solar">Teto Solar</label>
+                </div>
+                <div class="radio">
+                    <input type="checkbox" name="opcao[]" value="turbo-engine">
+                    <label for="turbo-engine">Motor Turbo</label>
+                </div>
+            </div>
+             <!-- Criar input de data -->
+             <div>
+                <label for="aniversario">Data de Nascimento:</label>
+                <input type="date" name="aniversario">
+            </div>
+            <!-- Inserção de arquivos -->
+            <div>
+                <label for="imagem">Insira a sua imagem:</label>
+                <input type="file" name="imagem">
+            </div>
+            <!-- Inserção de dados numericos (apresenta o problema de não considerar a virgula e letras) -->
+            <div>
+                <label for="salario">Escreva sua remuneração mensal:</label>
+                <input type="number" name="salario">
+            </div>
+            <!-- Inserção de email (a vantagem é que com o uso do type especifico o sistema faz a validação, se esta preenchido corretamente)-->
+            <div>
+                <label for="email">Insisra seu email:</label>
+                <input type="email" name="email">
+            </div>
+            <!-- Uso de value (tem como função indicar o que ou como preencher, 
+            já aparece o dados de valor preenchido no input)-->
+            <div>
+                <label for="value">Digite algum valor</label>
+                <input type="text" value="O meu valor é este" name="value">
+            </div>
+            <!-- Atributo disabled (serve para desabilitar um local para o preenchimento e poupar tempo do usuario)-->
+            <div>
+                <p>Tente preencher nesse espaço:</p>
+                <input type="text" value="Não precisa preencher!" disabled>
+            </div>
+            <!-- Atributo placegolder (serva para adicionar dicas para o usuario sobre o uso do sistema)-->
+            <div>
+                <label for="currentjob">Digite a sua profissão:</label>
+                <input type="text" name="currentjob" placeholder="No que você está trabalhando agora?">
+            </div>
+            <!-- Atributo require (força o usuário a preencher o input) -->
+            <div>
+                <label for="birthyear">Digite o ano que você nasceu:</label>
+                <input type="text" name="birthyear" placeholder="Digite o ano que você nasceu!" required>
+            </div>
+            <!-- Reiniciando o formulário (cria um botão para limpar todo o formulário)-->
+            <input type="reset" value="Limpar">
+            <!-- Envio de formulário (cria um botão para enviar todo o formulário)-->
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
